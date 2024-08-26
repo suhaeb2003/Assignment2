@@ -1,6 +1,5 @@
 <?php
 
-// Define the Book class
 class Book {
     private $title;
     private $availableCopies;
@@ -21,9 +20,9 @@ class Book {
     public function borrowBook() {
         if ($this->availableCopies > 0) {
             $this->availableCopies--;
-            return true; // Successful borrow
+            return true; 
         }
-        return false; // No copies available
+        return false;
     }
 
     public function returnBook() {
@@ -31,7 +30,6 @@ class Book {
     }
 }
 
-// Define the Member class
 class Member {
     private $name;
 
@@ -57,21 +55,16 @@ class Member {
     }
 }
 
-// Usage
-
-// Create 2 books with the following properties
 $book1 = new Book("The Great Gatsby", 5);
 $book2 = new Book("To Kill a Mockingbird", 3);
 
-// Create 2 members with the following properties
 $member1 = new Member("John Doe");
 $member2 = new Member("Jane Smith");
 
-// Members borrow books
-$member1->borrowBook($book1); // John Doe borrows "The Great Gatsby"
-$member2->borrowBook($book2); // Jane Smith borrows "To Kill a Mockingbird"
+$member1->borrowBook($book1); 
+$member2->borrowBook($book2); 
 
-// Print available copies
+
 echo "Available Copies of '" . $book1->getTitle() . "': " . $book1->getAvailableCopies() . "\n";
 echo "Available Copies of '" . $book2->getTitle() . "': " . $book2->getAvailableCopies() . "\n";
 
